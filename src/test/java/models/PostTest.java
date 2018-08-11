@@ -26,7 +26,7 @@ public class PostTest {
 
     @Test
     public void AllPostsContainsAllPosts_ture() {
-        Post post = new Post("Day 1: Intor");
+        Post post = new Post("Day 1: Intro");
         Post otherPost = new Post("How to pair successsfully");
         assertTrue(Post.getAll().contains(post));
         assertTrue(Post.getAll().contains(otherPost));
@@ -42,5 +42,11 @@ public class PostTest {
     public void PostInstantiatesWithContent_true() {
         Post post = new Post("Day 1: Intro");
         assertEquals("Day 1: Intro", post.getContent());
+    }
+
+    @Test
+    public void getPublished_isFasleAfterInstantiation_false() {
+        Post post = new Post("Day 1: Intro");
+        assertEquals(false, post.getPublished());
     }
 }

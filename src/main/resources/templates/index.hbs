@@ -1,6 +1,7 @@
 {{#partial "content"}}
     <h1>Post List!</h1>
 
+    <!--Check For Posts-->
     {{#if posts}}
         {{#each posts}}
             <p>Current post:</p>
@@ -9,7 +10,9 @@
     {{else}}
         <p>No Posts!</p>
     {{/if}}
-    <p>Add a new Post: </p>
+
+    <div class="container">
+     <p>Add a new Post: </p>
     <form action="/posts/new" method="POST">
         <div class="row">
             <div class="input-field col s12">
@@ -19,6 +22,7 @@
         </div>
         <button type="Submit" class="green darken-1 waves-effect waves-light btn-small">Submit</button>
     </form>
+    </div>
 {{/partial}}
 
 {{> layout.hbs }}
