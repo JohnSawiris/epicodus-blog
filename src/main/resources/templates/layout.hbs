@@ -8,21 +8,73 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel='stylesheet' href='/app.css'>
         <title>
             {{#block "title"}} Welcome to My Epicodus Blog {{/block}}
         </title>
     </head>
         <body>
 {{/block}}
+
+    <header>
+        <nav>
+            <div class="nav-wrapper blue">
+                <ul class="right">
+                    <li role="presentation">
+                        <a href="/">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="/posts">See All Posts</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="/posts/new">Add a New Post</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <img src="/images/photo.jpg"  alt="Laptop photo">
+        </div>
+    </header>
+
     <div class="container page">
         {{#block "content"}}
 
         {{/block}}
     </div>
 
+    <footer class="page-footer blue footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <h5 class="white-text">Epicodus Blog</h5>
+                    <p class="grey-text text-lighten-4">
+                        Epicodus Blog is a website that let's you add your own posts.
+                    </p>
+                </div>
+                <div class="col s6">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="/posts">See All Posts</a>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="/posts/new">Add a New Post</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
+            </div>
+        </div>
+    </footer>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    {{#block "footer"}}
     </body>
 </html>
-{{/block}}

@@ -1,0 +1,44 @@
+.hero {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.hero img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.posts, .no-posts {
+    padding: 1rem;
+    font-size: 1.7rem;
+}
+
+.no-posts {
+    text-align: center;
+}
+
+.container.page {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-post-header {
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+.add-button {
+    height: 59px !important;
+    width: 59px !important;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer {
+    margin-top: 1rem;
+}

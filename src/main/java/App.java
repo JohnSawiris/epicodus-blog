@@ -33,5 +33,21 @@ public class App {
             model.put("post", newPost);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/posts/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "newpost-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/posts/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            // Get Post Id from Request
+            int idOfPostToFind = Integer.parseInt(req.params(":id"));
+            // Find Post in The Instances On The Post Class
+            Post foundPost = Post.findById(idOfPostToFind);
+            // Pass Post To Model
+            model.put("post", foundPost);
+            return new ModelAndView(model, "post-detail.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }

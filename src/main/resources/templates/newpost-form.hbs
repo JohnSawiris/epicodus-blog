@@ -1,0 +1,12 @@
+{{#partial "content" }}
+    <h3 class="add-post-header">Add a new Post!</h3>
+
+    <form action="/posts/new" method="post">
+        <label for="content">Post Content</label>
+        <input type="text" name="content" id="content">
+
+        <button type="submit" class="btn waves-effect waves-light">Add New Blog Post</button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs }}

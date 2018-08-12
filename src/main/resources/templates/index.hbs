@@ -1,28 +1,28 @@
 {{#partial "content"}}
-    <h1>Post List!</h1>
+    <div class="page-container" style="margin-bottom: 2rem;">
+        <h4> Welcome to my Epicodus Blog.</h4>
+        <h6>A journey into code!</h6>
+    </div>
+    <hr>
+
+    <a class="btn-floating btn-large waves-effect waves-light light-blue accent-4 add-button" href="/posts/new"> + </a>
+
+    <h4>Post List!</h4>
 
     <!--Check For Posts-->
     {{#if posts}}
         {{#each posts}}
-            <p>Current post:</p>
-            <p>{{ content }}</p>
+            <div class="grey lighten-3 posts">
+                <p>Current post:</p>
+                <p>{{ content }} <a href="/posts/{{id}}">Read more...</a></p>
+            </div>
         {{/each}}
     {{else}}
-        <p>No Posts!</p>
-    {{/if}}
-
-    <div class="container">
-     <p>Add a new Post: </p>
-    <form action="/posts/new" method="POST">
-        <div class="row">
-            <div class="input-field col s12">
-                <label for="content">Post Description</label>
-                <input type="text" id="content" name="content">
-            </div>
+        <div class="grey lighten-3 no-posts">
+            <p>No Posts!</p>
         </div>
-        <button type="Submit" class="green darken-1 waves-effect waves-light btn-small">Submit</button>
-    </form>
-    </div>
+
+    {{/if}}
 {{/partial}}
 
 {{> layout.hbs }}

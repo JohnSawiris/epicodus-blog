@@ -1,0 +1,18 @@
+{{#partial "content"}}
+    <div class="grey lighten-3 posts">
+        <p>Content:</p>
+        <p>{{ post.content }}</p>
+        <h4>Created At: </h4>
+        <p>{{ post.createdAt }}</p>
+        <h5>Post Status: </h5>
+        <p>
+            {{#if post.published }}
+                <i class="material-icons">done</i> Published
+            {{else}}
+                <i class="material-icons">edit</i> Draft
+            {{/if}}
+        </p>
+    </div>
+{{/partial}}
+
+{{> layout.hbs }}
