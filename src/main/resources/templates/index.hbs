@@ -11,9 +11,9 @@
 
     <!--Check For Posts-->
     {{#if posts}}
+        <h5>Current post:</h5>
         {{#each posts}}
             <div class="grey lighten-3 posts">
-                <p>Current post:</p>
                 <p>{{ content }} <a href="/posts/{{id}}">Read more...</a></p>
             </div>
         {{/each}}

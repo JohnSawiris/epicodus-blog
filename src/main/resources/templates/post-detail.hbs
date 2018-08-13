@@ -11,6 +11,8 @@
             {{else}}
                 <i class="material-icons">edit</i> Draft
             {{/if}}
+            <a href="/posts/{{post.id}}/update" style="margin-left: 5rem;" class="btn waves-effect waves-light green accent-4">Edit</a>
+            <a href="/posts/{{post.id}}/delete" style="margin-left: 1rem;" class="btn waves-effect waves-light red darken-1">Delete</a>
         </p>
     </div>
 {{/partial}}

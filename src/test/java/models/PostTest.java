@@ -81,4 +81,37 @@ public class PostTest {
         Post secPost = new Post("Second Post");
         assertEquals(2, Post.findById(secPost.getId()).getId());
     }
+
+    @Test
+    public void updateChangesPostContent() {
+        Post post = setupNewPost();
+        String formerContent = post.getContent();
+        LocalDateTime formerDate = post.getCreatedAt();
+        int formerId = post.getId();
+
+        post.update("Android: Day 40");
+        String newContent = post.getContent();
+
+        assertEquals(formerId, post.getId());
+        assertEquals(formerDate, post.getCreatedAt());
+        assertEquals(newContent, post.getContent());
+    }
+
+    @Test
+    public void deleteDeletesASpecificPost() {
+        Post post = setupNewPost();
+        Post otherPost = new Post("How to pair successfully");
+        post.deletePost();
+        assertEquals(1, Post.getAll().size());
+        assertEquals(Post.getAll().get(0).getId(), 2);
+    }
+
+    @Test
+    public void deleteAllPostsDeletesAllPosts() {
+        Post post = setupNewPost();
+        Post otherPost = setupNewPost();
+
+        Post.clearAllPosts();
+        assertEquals(0, Post.getAll().size());
+    }
 }
